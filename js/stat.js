@@ -28,7 +28,7 @@ var getMaxElement = function (arr) {
   return maxElement;
 };
 
-var renderStatistics = function (ctx, names, times) {
+window.renderStatistics = function (ctx, names, times) {
   renderCloud(ctx, CLOUD_X + CLOUD_GAP, CLOUD_Y + CLOUD_GAP, 'rgba(0, 0, 0, 0.7)');
   renderCloud(ctx, CLOUD_X, CLOUD_Y, '#ffffff');
   ctx.fillStyle = '#000';
@@ -43,7 +43,8 @@ var renderStatistics = function (ctx, names, times) {
     barHeight = BAR_CHAT_HEIGHT * times[i] / maxTime;
     ctx.fillStyle = '#000';
     ctx.fillText(names[i], CLOUD_X + PADDING_HORIZONTAL + (BAR_WIDTH + BAR_GAP) * i, CLOUD_HEIGHT - PADDING_VERTICAL);
-    // ctx.fillStyle = rgb(0, 0, Math.floor(Math.random() * 255));
+    // ctx.fillStyle = 'rgba(0, 0, 255, Math.random())';
+    ctx.fillStyle = 'hsl(243, Math.floor(Math.random() * 100)%, 50%)';
     ctx.fillRect(CLOUD_X + PADDING_HORIZONTAL + (BAR_WIDTH + BAR_GAP) * i, CLOUD_HEIGHT - PADDING_VERTICAL - FONT_SIZE, BAR_WIDTH, -barHeight);
     ctx.fillStyle = '#000';
     ctx.fillText(Math.round(times[i]), CLOUD_X + PADDING_HORIZONTAL + (BAR_WIDTH + BAR_GAP) * i, CLOUD_HEIGHT - PADDING_VERTICAL - barHeight - fontHeight);
