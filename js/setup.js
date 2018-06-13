@@ -49,11 +49,11 @@ var renderWizard = function (wizard) {
 var fragment = document.createDocumentFragment();
 
 var renderWizards = function (arr) {
-  for (var i = 0; i < arr.length; i++) {
+  for (var j = 0; j < arr.length; j++) {
     fragment.appendChild(renderWizard(wizardsArray[i]));
   }
   return fragment;
-}
+};
 
 similarListElement.appendChild(renderWizards(wizardsArray));
 
