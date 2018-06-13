@@ -48,10 +48,13 @@ var renderWizard = function (wizard) {
 
 var fragment = document.createDocumentFragment();
 
-for (var j = 0; j < wizardsArray.length; j++) {
-  fragment.appendChild(renderWizard(wizardsArray[i]));
+var renderWizards = function (arr) {
+  for (var i = 0; i < arr.length; i++) {
+    fragment.appendChild(renderWizard(wizardsArray[i]));
+  }
+  return fragment;
 }
 
-similarListElement.appendChild(fragment);
+similarListElement.appendChild(renderWizards(wizardsArray));
 
 document.querySelector('.setup-similar').classList.remove('hidden');
