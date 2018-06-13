@@ -37,12 +37,21 @@ userDialog.classList.remove('hidden');
 var similarListElement = document.querySelector('.setup-similar-list');
 var similarWizardTemplate = document.querySelector('#similar-wizard-template').content.querySelector('.setup-similar-item');
 
-for (var i = 0; i < wizardsArray.length; i++) {
+var renderWizard = function (wizard) {
   var wizardElement = similarWizardTemplate.cloneNode(true);
-  wizardElement.querySelector('.setup-similar-label').textContent = wizardsArray[i].name;
-  wizardElement.querySelector('.wizard-coat').style.fill = wizardsArray[i].coatColor;
-  wizardElement.querySelector('.wizard-eyes').style.fill = wizardsArray[i].eyesColor;
-  similarListElement.appendChild(wizardElement);
+  wizardElement.querySelector('.setup-similar-label').textContent = wizard.name;
+  wizardElement.querySelector('.wizard-coat').style.fill = wizard.coatColor;
+  wizardElement.querySelector('.wizard-eyes').style.fill = wizard.eyesColor;
+
+  return wizardElement;
+};
+
+var fragment = document.createDocumentFragment();
+
+for (var i = 0; i < wizardsArray.length; i++) {
+  fragment.appendChild(renderWizard(wizardsArray[i]));
 }
+
+similarListElement.appendChild(fragment);
 
 document.querySelector('.setup-similar').classList.remove('hidden');
