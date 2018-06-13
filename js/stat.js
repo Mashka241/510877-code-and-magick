@@ -48,7 +48,9 @@ window.renderStatistics = function (ctx, names, times) {
 
   var maxTime = getMaxElement(times);
   var barHeight = 0;
-  var barColor, barX, barY;
+  var barColor;
+  var barX;
+  var barY;
 
   for (var i = 0; i < names.length; i++) {
     barHeight = -(BAR_CHAT_HEIGHT * times[i] / maxTime);
