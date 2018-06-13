@@ -26,9 +26,9 @@ var createRandomWizard = function (names, surnames, coats, eyes) {
 var wizardsArray = [];
 
 for (var i = 0; i < 4; i++) {
-  var wizard = createRandomWizard(wizardNames, wizardSurnames, wizardCoatsColors, wizardEyesColors);
-  wizardsArray.push(wizard);
-};
+  var randomWizard = createRandomWizard(wizardNames, wizardSurnames, wizardCoatsColors, wizardEyesColors);
+  wizardsArray.push(randomWizard);
+}
 
 var userDialog = document.querySelector('.setup');
 userDialog.classList.remove('hidden');
@@ -48,7 +48,7 @@ var renderWizard = function (wizard) {
 
 var fragment = document.createDocumentFragment();
 
-for (var i = 0; i < wizardsArray.length; i++) {
+for (var j = 0; j < wizardsArray.length; j++) {
   fragment.appendChild(renderWizard(wizardsArray[i]));
 }
 
