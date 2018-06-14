@@ -50,7 +50,7 @@ var fragment = document.createDocumentFragment();
 
 var renderWizards = function (arr) {
   for (var j = 0; j < arr.length; j++) {
-    fragment.appendChild(renderWizard(wizardsArray[i]));
+    fragment.appendChild(renderWizard(arr[j]));
   }
   return fragment;
 };
