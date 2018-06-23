@@ -62,7 +62,7 @@ var setup = document.querySelector('.setup');
 var setupClose = setup.querySelector('.setup-close');
 // var setupName = setup.querySelector('setup-user-name');
 
-var onPopupEscPress = function(evt) {
+var onPopupEscPress = function (evt) {
   if (evt.keyCode === 27) {
     closePopup();
   }
@@ -78,7 +78,7 @@ var closePopup = function () {
 };
 
 setupOpen.addEventListener('click', function () {
-  openPopup();  
+  openPopup();
 });
 
 setupClose.addEventListener('click', function () {
